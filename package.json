@@ -1,0 +1,19 @@
+{
+  "name": "live",
+  "version": "1.0.0",
+  "description": "这是一个学习工程",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wangyang",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.0",
+    "koa-static": "^3.0.0",
+    "mysql": "^2.13.0",
+    "request": "^2.81.0"
+  }
+}
