@@ -1,7 +1,6 @@
 /**
  * Created by qq1440214507 on 2017/6/9.
  * 用户操作api
- * 
  */
 const sql =require('../utils/sqlConfig')
 const sqlHelper =require('../utils/dbHelper')
