@@ -16,7 +16,7 @@ app.use(koaStatic(
 ))
 app.use(bodyParser())
 //token验证 除去注册
-router.all("/*",async (ctx,next)=>{
+router.all("/!*",async (ctx,next)=>{
     const token = ctx.request.body.token
     const user=await tokenUtils.verify(token)
     console.log(ctx.request.originalUrl)
