@@ -8,4 +8,6 @@ module.exports={
     queryPlatformAnchor:"select * from anchor where platform = ?",
     queryUserById:"select * from User where id = ?",
     replaceUserSql:"replace into user set ?",
+    insertUserSql:"insert into user set ?",
+    selectUser:"select * from user where account = ? and password = ?",
 }

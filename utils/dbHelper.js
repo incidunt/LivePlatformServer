@@ -33,6 +33,7 @@ const query = (sql,value)=>{
     }).then((data)=>{
         return resultData(data,successMessage,sql)
     },(err)=>{
+        console.log(err)
         return resultData(null,`数据库操作出错${err.code}`)
     })
 }

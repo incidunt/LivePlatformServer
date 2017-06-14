@@ -6,11 +6,21 @@ const sql =require('../utils/sqlConfig')
 const sqlHelper =require('../utils/dbHelper')
 const resultUtil =require('../utils/resultUtil')
 const ObjectUtils =require('../utils/objectUtils')
+const userUtils =require('../utils/userUtils')
 const createUser =async (ctx)=>{
-    console.log(ctx.request.body)
-    console.log(ctx.request.json)
-    console.log(ctx.json)
-    ctx.body="创建用户成功"
+    const body = ctx.request.body.userInfo
+    let result
+    //默认 phone == account
+    if (!body || !body.phone || !body.nickname || !body.password){
+         result=resultUtil(null,"用户注册信息不完整")
+    }else {
+        //这里需要判断
+         result=userUtils.isRightUser(body)
+        if(result.code==1){//成功存库
+            result=await sqlHelper.query(sql.insertUserSql,body)
+        }
+    }
+    ctx.body=result
 }
 const getUserInfo =async (ctx)=>{
     ctx.body=await sqlHelper.query(sql.queryUserById,ctx.params.id)
