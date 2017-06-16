@@ -13,7 +13,9 @@ const login = async(ctx) => {
     } else {
         const result = await sqlHelper.query(sql.selectUser, [body.account, body.password])
         if (result.datas) {
-            result.datas = await jstUtils.sign(result.datas)
+            //只签名无法改变的东西 id 账号
+            const signData = {id:result.datas.id,account:result.datas.account,nickname:result.datas.nickname}
+            result.datas = await jstUtils.sign(signData)
         }
         ctx.body = result
     }

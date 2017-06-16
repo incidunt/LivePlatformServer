@@ -7,6 +7,7 @@ const sqlHelper =require('../utils/dbHelper')
 const resultUtil =require('../utils/resultUtil')
 const ObjectUtils =require('../utils/objectUtils')
 const userUtils =require('../utils/userUtils')
+const jstUtils =require('../utils/jstUtils')
 const createUser =async (ctx)=>{
     const body = ctx.request.body.userInfo
     let result
@@ -42,9 +43,7 @@ const updateUserInfo= async ctx=>{
         } else {
             let user = sqlResult.datas[0]
             ObjectUtils.updateObject(user,requestBody)
-            let result = await sqlHelper.query(sql.replaceUserSql, user)
-            result.datas = []
-            ctx.body = result
+            ctx.body = await sqlHelper.query(sql.replaceUserSql, user)
         }
     }
 
