@@ -25,7 +25,7 @@ setInterval(async ()=>{
     //parseYY(body,yyBody)
 
     console.log(body)
-    DbHelper.insertAll(sqlConfig.replaceSql,body)
+    DbHelper.insertAll(sqlConfig.replaceAnchorSql,body)
 
 },urls.loopTime)
 //kk直播

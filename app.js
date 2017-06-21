@@ -9,6 +9,7 @@ const bodyParser = require('koa-bodyparser')
 const path = require('path')
 const controlRouter = require('./apiControllers')
 const tokenUtils = require('./utils/jstUtils')
+const loopRequest = require('./request/loopRequest')
 const app = new Koa()
 //静态资源管理
 app.use(koaStatic(

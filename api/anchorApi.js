@@ -8,5 +8,5 @@ const getAnchorByPlatform =async (ctx)=>{
     ctx.body=await sqlHelper.query(sql.queryPlatformAnchor,ctx.params.platform)
 }
 module.exports={
-    "GET /anchor/platform=:platform":getAnchorByPlatform
+    "GET /anchor/platform/:platform":getAnchorByPlatform
 }
