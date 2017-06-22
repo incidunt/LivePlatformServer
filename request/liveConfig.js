@@ -24,11 +24,35 @@ const YY={
     url:"http://arpc.uyitv.com/youyiweb/getRoomlListV5.action",
     postJson:"method=77HB100216{'userid':'-1','page':'1','type':'1','richeslevel':'-1','age':'-1','address':'-1','talentlevel':'-1','experiencelevel':'-1','channelID':'20001','version':'5.1','platform':'1','key':'a06af86454e846c08edaaff716587954'}b"
 }
+//冰棍直播
+const BG={
+    platform:4,
+    url:"http://wonder.sc586.cn/api/public/?service=Home.getNew&lng=%27&lat="
+}
+//抱抱直播
+const BB={
+    platform:5,
+    url:"http://api.myhug.cn/z/hot"
+}
+//17玩直播
+const YQW={
+    platform:6,
+    url:"http://shangtv.cn:3003/recommand_list?uid=110000"
+}
+//九秀直播
+const JX={
+    platform:7,
+    url:"http://api.9xiu.com/channel/main/channelTag?os=1&reqtime=1498097167507&ncode=ACC46657E3FAB7DB8EDBB5723242482B&imei=289df9b86951691bec5d3f5e971bab6f&tag=0&page=0&token=glOt6YADhedEZQIbZPtZWKNqNGib1UXktqQQr7zOl83vKKV9RYx%3Djia%3DIQq0%2FbqmwQoeyJr%3Djia%3DfN96PPZAxMh1EU3r1iWeYQUBRz6YYRNVNXQvXdcjZzrjKvj20Q%3D%3D"
+}
 module.exports={
     loopTime:30000,//循环一次的时间
     kk:kk,
     zf:ZF,
-    yy:YY
+    yy:YY,
+    bg:BG,
+    bb:BB,
+    yq:YQW,
+    jx:JX
 
 }
 
